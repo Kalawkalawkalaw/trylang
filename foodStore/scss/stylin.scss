@@ -1,0 +1,131 @@
+@import "./variables";
+@import "./mixins.scss";
+
+.nav-bar {
+  ul {
+    @include button-hover;
+    display: flex;
+    flex-direction: row;
+    background-color: $back-color;
+    padding: 20px 0;
+    padding-left: 8%;
+  }
+}
+
+.background {
+  background: url(../img/lasagna.jpg) no-repeat;
+  background-size: cover;
+  height: 100vh;
+  border-radius: 10% 10% 30% 10%;
+  .head_text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 15%;
+    padding-left: 7%;
+    color: $bold-color;
+    font-size: 80px;
+    h1 {
+      max-width: 60vw;
+      font-size: 70px;
+    }
+    button {
+      @include _button;
+    }
+    button:hover {
+      cursor: pointer;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+  }
+}
+
+.section_2 {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  width: 80vw;
+  margin: auto;
+  padding-top: 100px;
+  text-align: center;
+  .para_heading {
+    @include text-heading;
+    border-width: 0 5px 5px 0px;
+  }
+  .paras {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .para_1 {
+    @include text-font;
+  }
+  .para_img {
+    @include para-image;
+  }
+}
+
+.section_3 {
+  @extend .section_2;
+  flex-direction: row;
+  .para_1 {
+    border-width: 0 10px 0px 0px;
+  }
+  ul {
+    @include text-font;
+    list-style: none;
+    text-align: left;
+    li {
+      max-width: 15vw;
+    }
+    a li:hover {
+      color: white;
+      background-color: $bold-color;
+      cursor: pointer;
+    }
+  }
+}
+
+$breakpoint-tablet: 1024px;
+@media (max-width: $breakpoint-tablet) {
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  .section_2 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .section_3 {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .paras {
+    display: flex;
+    justify-content: center;
+    min-width: 100vw;
+  }
+  .para_1 {
+    justify-content: center;
+  }
+  .para_img {
+    image-resolution: 200px 400px;
+  }
+}
+
+$breakpoint-mobile: 768px;
+@media (max-width: $breakpoint-mobile) {
+  .background {
+    .head_text {
+      font-size: 40px;
+    }
+  }
+}
+
+$breakpoint-mobile-bg: 448px;
+@media (max-width: $breakpoint-mobile-bg) {
+  .background {
+    background: repeat;
+  }
+  .container {
+    justify-content: left;
+  }
+}

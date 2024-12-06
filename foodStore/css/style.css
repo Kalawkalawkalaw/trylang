@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  all: unset;
+}
+
+body {
+  background-color: #dddddd;
+}
+
+.container {
+  max-width: 1920px;
+  margin: auto;
+}
